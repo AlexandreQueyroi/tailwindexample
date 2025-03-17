@@ -12,9 +12,9 @@ if (isset($_SESSION['user'])) {
             $stmg->execute();
             $stmg->close();
         }
-        header("Location: index.php");
+        header("Location: ../index.php");
 
     }
 }
-header("Location: index.php");
+header("Location: ../index.php");
 ?>

@@ -10,9 +10,9 @@ if (isset($_SESSION['user'])) {
         $stmg->bind_param("si", $task, $_SESSION['id']);
         $stmg->execute();
         $stmg->close();
-        header("Location: index.php");
+        header("Location: ../index.php");
 
     }
 }
-header("Location: index.php");
+header("Location: ../index.php");
 ?>

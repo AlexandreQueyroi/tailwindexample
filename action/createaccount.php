@@ -30,9 +30,9 @@ if (isset($_POST['newuser']) && isset($_POST['newpass']) && isset($_POST['newpas
         if ($result === FALSE) {
             echo "error";
         }
-        header("Location: index.php");
+        header("Location: ../index.php");
 
     }
 }
-header("Location: index.php");
+header("Location: ../index.php");
 ?>
