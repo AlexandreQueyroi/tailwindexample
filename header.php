@@ -105,17 +105,12 @@ include_once 'modal.php';
                         <li>
                             <button id="theme-toggle" type="button" onclick="switchmode()"
                                 class="text-gray-500 dark:text-gray-400 bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-gray-300 dark:focus:ring-gray-500 rounded-lg text-sm p-2.5">
-                                <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5" fill="currentColor"
-                                    xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-                                    <path fill="none" stroke="#d1d5db" stroke-linecap="round" stroke-linejoin="round"
-                                        stroke-width="2" d="M12 3h.393a7.5 7.5 0 0 0 7.92 12.446A9 9 0 1 1 12 2.992z" />
-                                </svg>
-                                <svg id="theme-toggle-light-icon" class="w-5 h-5" fill="currentColor"
-                                    xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-                                    <path fill="none" stroke="#121212" stroke-linecap="round" stroke-linejoin="round"
-                                        stroke-width="2"
-                                        d="M8 12a4 4 0 1 0 8 0a4 4 0 1 0-8 0m-5 0h1m8-9v1m8 8h1m-9 8v1M5.6 5.6l.7.7m12.1-.7l-.7.7m0 11.4l.7.7m-12.1-.7l-.7.7" />
-                                </svg>
+                                <span id="theme-toggle-dark-icon"
+                                    class="iconify text-background2-light dark:text-background2-dark"
+                                    data-icon="tabler:moon"></span>
+                                <span id="theme-toggle-light-icon"
+                                    class="iconify text-background2-light dark:text-background2-dark"
+                                    data-icon="tabler:sun"></span>
                             </button>
                         </li>
                     </ul>
@@ -150,11 +145,11 @@ include_once 'modal.php';
             <li>
                 <button id="theme-toggle" type="button" onclick="switchmode()"
                     class="text-gray-500 dark:text-gray-400 bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-gray-300 dark:focus:ring-gray-500 rounded-lg text-sm p-2.5">
-                    <span id="theme-toggle-dark-icon"
-                        class="hidden iconify text-background2-light dark:text-background2-dark"
+                    <span id="theme-toggle-dark-icon-mobile"
+                        class="iconify text-background2-light dark:text-background2-dark"
                         data-icon="tabler:moon"></span>
-                    <span id="theme-toggle-light-icon" class="iconify text-background2-light dark:text-background2-dark"
-                        data-icon="tabler:sun"></span>
+                    <span id="theme-toggle-light-icon-mobile"
+                        class="iconify text-background2-light dark:text-background2-dark" data-icon="tabler:sun"></span>
                 </button>
             </li>
         </ul>
