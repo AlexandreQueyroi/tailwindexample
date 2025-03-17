@@ -1,6 +1,11 @@
+<style>
+.modal {
+    display: none;
+}
+</style>
 <script src="modal.js"></script>
-<div id="modal-connection" tabindex="-1" aria-hidden="true"
-    class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
+<div role="dialog" id="modal-connection" tabindex="-1" aria-hidden="true"
+    class="hidden modal overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
     <div class="relative p-4 w-full max-w-md max-h-full">
         <div class="relative bg-white rounded-lg shadow-sm dark:bg-gray-700">
             <div
@@ -28,12 +33,18 @@
                         <input type="text" name="pseudo" id="pseudo"
                             class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
                             placeholder="Veuillez indiquer votre Identifiant" required />
-                        <label for="pseudo" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
-                            Mot de Passe
+                        <label for="newpass" class="block mt-2 mb-2 text-sm font-medium text-gray-900 dark:text-white">
+                            Mot de passe
                         </label>
-                        <input type="password" name="password" id="password"
-                            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
-                            placeholder="Mot de Passe" required />
+                        <div class="relative">
+                            <input type="password" name="password" id="password"
+                                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:text-white"
+                                required />
+                            <button type="button" onclick="togglePasswordVisibility('password','icon-password')"
+                                class="absolute top-2 right-2 z-10 px-2 py-1 rounded shadow">
+                                <span id="icon-newpass" class="iconify" data-icon="tabler:eye-closed"></span>
+                            </button>
+                        </div>
                     </div>
 
                     <button type="submit"
@@ -52,8 +63,8 @@
         </div>
     </div>
 </div>
-<div id="modal-createaccount" tabindex="-1" aria-hidden="true"
-    class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
+<div role="dialog" id="modal-createaccount" tabindex="-1" aria-hidden="true"
+    class="hidden modal overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
     <div class="relative p-4 w-full max-w-md max-h-full">
         <div class="relative bg-white rounded-lg shadow-sm dark:bg-gray-700">
             <div
@@ -78,14 +89,14 @@
                         <label for="newuser" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
                             Identifiant
                         </label>
-                        <input type="text" name="newuser" id="newuser" onblur="checkModalIsValid()"
+                        <input type="text" name="newuser" id="newuser" oninput="checkModalIsValid()"
                             class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:text-white"
                             required />
                         <label for="newpass" class="block mt-2 mb-2 text-sm font-medium text-gray-900 dark:text-white">
                             Mot de passe
                         </label>
                         <div class="relative">
-                            <input type="password" name="newpass" id="newpass" onblur="checkModalIsValid()"
+                            <input type="password" name="newpass" id="newpass" oninput="checkModalIsValid()"
                                 class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:text-white"
                                 required />
                             <button type="button" onclick="togglePasswordVisibility('newpass','icon-newpass')"
@@ -100,7 +111,7 @@
                         </label>
                         <div class="relative">
                             <input type="password" name="newpass_confirm" id="newpass_confirm"
-                                onblur="checkModalIsValid()"
+                                oninput="checkModalIsValid()"
                                 class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:text-white"
                                 required />
                             <button type="button"
@@ -123,8 +134,8 @@
     </div>
 </div>
 
-<div id="modal-newtask" tabindex="-1" aria-hidden="true"
-    class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
+<div role="dialog" id="modal-newtask" tabindex="-1" aria-hidden="true"
+    class="hidden modal overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
     <div class="relative p-4 w-full max-w-md max-h-full">
         <div class="relative bg-white rounded-lg shadow-sm dark:bg-gray-700">
             <div
@@ -164,8 +175,8 @@
     </div>
 </div>
 
-<div id="modal-edit-task" tabindex="-1" aria-hidden="true"
-    class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
+<div role="dialog" id="modal-edit-task" tabindex="-1" aria-hidden="true"
+    class="hidden modal overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
     <div class="relative p-4 w-full max-w-md max-h-full">
         <div class="relative bg-white rounded-lg shadow-sm dark:bg-gray-700">
             <div
@@ -186,7 +197,7 @@
             </div>
             <div class="p-4 md:p-5">
                 <form method="POST" action="action/editTask.php">
-                    <input type="hidden" name="task_id" id="edit-task-id" value="<?php echo $task[1]; ?>" />
+                    <input type="hidden modal" name="task_id" id="edit-task-id" value="<?php echo $task[1]; ?>" />
                     <input type="text" name="task_name" id="edit-task-name" placeholder="Nom de la tâche" required
                         class="border p-2 w-full rounded" />
                     <div class="flex justify-end mt-4"></div>

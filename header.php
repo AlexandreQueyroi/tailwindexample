@@ -1,7 +1,6 @@
 <?php
 session_start();
 include_once 'bdd.php';
-include_once 'modal.php';
 ?>
 
 <!DOCTYPE html>
@@ -20,40 +19,44 @@ include_once 'modal.php';
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="switchmode.js" defer></script>
     <script>
-    tailwind.config = {
-        darkMode: "class",
-        theme: {
-            extend: {
-                colors: {
-                    primary: {
-                        light: "#121212",
-                        dark: "#d1d5db",
-                    },
-                    background: {
-                        light: "#d1d5db",
-                        dark: "#121212",
-                    },
-                    background2: {
-                        light: "#ffffff",
-                        dark: "#0a0a23",
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            light: "#121212",
+                            dark: "#d1d5db",
+                        },
+                        background: {
+                            light: "#d1d5db",
+                            dark: "#121212",
+                        },
+                        background2: {
+                            light: "#ffffff",
+                            dark: "#0a0a23",
+                        },
                     },
                 },
             },
-        },
-    };
-    document.getElementById('theme-toggle-mobile').addEventListener('click', function() {
-        const html = document.documentElement;
-        if (html.classList.contains('dark')) {
-            html.classList.remove('dark');
-            localStorage.setItem('theme', 'light');
-        } else {
-            html.classList.add('dark');
-            localStorage.setItem('theme', 'dark');
-        }
-    });
+        };
+        document.getElementById('theme-toggle-mobile').addEventListener('click', function () {
+            const html = document.documentElement;
+            if (html.classList.contains('dark')) {
+                html.classList.remove('dark');
+                localStorage.setItem('theme', 'light');
+            } else {
+                html.classList.add('dark');
+                localStorage.setItem('theme', 'dark');
+            }
+        });
     </script>
     <title>Tailwind Example - TodoList</title>
 </head>
+
+<?php
+include_once 'modal.php';
+?>
 
 <body class="flex flex-col min-h-screen bg-background2-light dark:bg-background2-dark">
     <header class="flex-grow">
@@ -156,10 +159,10 @@ include_once 'modal.php';
     </div>
 
     <script>
-    document.getElementById('menu-toggle').addEventListener('click', function() {
-        const menu = document.getElementById('menu-mobile');
-        menu.classList.toggle('hidden');
-    });
+        document.getElementById('menu-toggle').addEventListener('click', function () {
+            const menu = document.getElementById('menu-mobile');
+            menu.classList.toggle('hidden');
+        });
     </script>
 
 
